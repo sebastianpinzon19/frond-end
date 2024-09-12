@@ -1,0 +1,17 @@
+/* Estilos para el navbar */
+.navbar {
+  position: fixed; /* Fijo para que permanezca en la parte superior */
+  top: 0; /* Alineado al borde superior */
+  left: 0; /* Alineado al borde izquierdo */
+  right: 0; /* Alineado al borde derecho */
+  height: 60px; /* Altura del navbar */
+  background-color: green; /* Color de fondo del navbar */
+  z-index: 1000; /* Asegúrate de que sea mayor que el contenido */
+}
+
+/* Estilos para el contenido */
+.content {
+  padding-top: 60px; /* Ajusta este valor según la altura del navbar */
+  padding-bottom: 64px; /* Espacio para el footer */
+  margin-bottom: 74px; /* Margen inferior para el footer */
+}
