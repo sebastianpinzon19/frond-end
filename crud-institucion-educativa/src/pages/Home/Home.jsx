@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Grid, Card, CardContent, CardMedia, Typography,
+import { Container, Card, CardContent, CardMedia, Typography,
 Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField,
 Snackbar, Alert } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'; // Asegúrate de importar el icono
@@ -109,9 +109,9 @@ const Home = () => {
             <Typography variant="h4" gutterBottom>
                 Cursos Disponibles
             </Typography>
-            <Grid container spacing={3}>
+            <Container> {/* Reemplaza Grid por Container */}
                 {cursos.map((curso) => (
-                    <Grid item xs={12} md={4} key={curso._id}>
+                    <Container key={curso._id}>
                         <Card onClick={() => handleCardClick(curso)}>
                             <CardMedia
                                 component="img"
@@ -130,9 +130,9 @@ const Home = () => {
                                 </Typography>
                             </CardContent>
                         </Card>
-                    </Grid>
+                    </Container>
                 ))}
-            </Grid>
+            </Container>
 
             {/* Modal de Registro e Inscripción */}
             <Dialog open={openModal} onClose={handleCloseModal} maxWidth="sm" fullWidth>
