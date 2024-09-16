@@ -13,7 +13,7 @@ const MasInformacion = () => {
 
     const fetchInfo = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/informacion');
+            const response = await fetch('https://localhost:3000/api/informacion');
             if (!response.ok) throw new Error('Error al obtener información');
             const data = await response.json();
             setInfo(data);
