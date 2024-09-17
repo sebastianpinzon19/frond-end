@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, Button, Box, Snackbar, Alert } from '@mui/material';
+import { Container, Typography, Button, Box, Snackbar, Alert, Card, CardContent, CardActions } from '@mui/material';
 import { Edit, Delete, Info } from '@mui/icons-material';
 
 const MasInformacion = () => {
@@ -30,30 +30,38 @@ const MasInformacion = () => {
     };
 
     return (
-        <Container>
-            <Typography variant="h1" gutterBottom>Más Información</Typography>
-            <Box marginBottom={2}>
+        <Container maxWidth="md">
+            <Typography variant="h2" gutterBottom align="center" sx={{ mb: 4 }}>
+                Más Información
+            </Typography>
+            <Box textAlign="center" mb={4}>
                 <Button variant="contained" color="primary" onClick={fetchInfo}>
                     Actualizar Información
                 </Button>
             </Box>
-            <Box>
+            <Box display="flex" flexDirection="column" gap={2}>
                 {info.map((item) => (
-                    <Box key={item.id} marginBottom={2} padding={2} border={1} borderRadius={4}>
-                        <Typography variant="h5">{item.titulo}</Typography>
-                        <Typography>{item.descripcion}</Typography>
-                        <Box marginTop={1}>
+                    <Card key={item.id} sx={{ boxShadow: 3 }}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                {item.titulo}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                                {item.descripcion}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
                             <Button variant="outlined" color="primary" startIcon={<Edit />}>
                                 Editar
                             </Button>
-                            <Button variant="outlined" color="secondary" startIcon={<Delete />}>
+                            <Button variant="outlined" color="error" startIcon={<Delete />}>
                                 Eliminar
                             </Button>
                             <Button variant="outlined" color="info" startIcon={<Info />}>
                                 Más Info
                             </Button>
-                        </Box>
-                    </Box>
+                        </CardActions>
+                    </Card>
                 ))}
             </Box>
 
